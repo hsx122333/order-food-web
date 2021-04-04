@@ -1,0 +1,599 @@
+@charset "utf-8";
+@import './config.scss';
+
+/* 项目专用样式 */
+
+//专线业务
+.pl-nav {
+    @include flex;
+    flex-wrap: wrap;
+    padding: rem(20) 0;
+    li {
+        flex: 0 0 33.33%;
+    }
+    a {
+        display: block;
+        padding: rem(12) 0;
+        text-align: center;
+    }
+    .name{
+    }
+    .icon{
+        position: relative;
+        @include wh_ib(104, 104);
+        overflow: hidden;
+        &.all{
+            background: url(../images/hetong/list-01.png) center center no-repeat;
+            @include bg_sz(104, 104);
+        }
+        &.wait{
+            background: url(../images/hetong/list-02.png) center center no-repeat;
+            @include bg_sz(104, 104);
+        }
+        &.edit{
+            background: url(../images/hetong/list-03.png) center center no-repeat;
+            @include bg_sz(104, 104);
+        }
+        &.kcbh{
+            background: url(../images/hetong/list-04.png) center center no-repeat;
+            @include bg_sz(104, 104);
+        }
+        &.jsbh{
+            background: url(../images/hetong/list-05.png) center center no-repeat;
+            @include bg_sz(104, 104);
+        }
+        &.more{
+            background: url(../images/hetong/list-06.png) center center no-repeat;
+            @include bg_sz(104, 104);
+        }
+        img{
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .num{
+        position: absolute;
+        right: 0;
+        top: 0;
+        @include wh_ib(30, 30);
+        background-color: #eb2623;
+        border: 2px solid #fff;
+        border-radius: 100%;
+        color: #fff;
+        text-align: center;
+        line-height: rem(26);
+        font-style: normal;
+        font-size: rem(18);
+    }
+}
+
+.pl-box{
+    background-color: #fff;
+}
+.pl-box-hd{
+    @include flex;
+    @include flex-space-between;
+    @include flex-align-center;
+    align-items: center;
+    padding: 0 rem(30);
+    // border-bottom: 1px solid $border-color;
+    .name{
+        max-width: rem(430);
+        display: inline-block;
+        vertical-align: middle;
+        font-weight: normal;
+        @include text-overflow;
+    }
+}
+.pl-box-foot{
+    @include flex;
+    @include flex-align-center;
+    @include flex-space-between;
+    height: rem(90);
+    // border-bottom: 1px solid $border-color;
+}
+
+.cq-more-down{
+    @include wh_ib(30, 24);
+    background: url(../images/cq-more-down.png) center center no-repeat;
+    @include bg_sz(30, 24);
+    transition: transform .25s ease;
+    &.on{
+        transform: rotate(180deg);
+    }
+}
+.cq-more-right{
+    @include wh_ib(36, 36);
+    background: #abe0ff url(../images/cq-more-right.png) center center no-repeat;
+    @include bg_sz(12, 20);
+    border-radius: 100%;
+    &.on{
+        transform: rotate(180deg);
+    }
+}
+
+.pl-dl{
+    @include flex;
+    padding: rem(30) rem(30) rem(20) rem(30);
+    // border-bottom: 1px solid $border-color;
+    dt{
+        position: relative;
+        width: rem(152);
+        height: rem(120);
+        @include bg_sz(64, 64);
+        border-radius: rem(20);
+        text-align: center;
+        overflow: hidden;
+        .img{
+            @include wh_ib(64, 64);
+            margin-top: rem(10);
+            img{
+                display: block;
+                width: 100%;
+                height: 100%;
+            }
+        }
+        &.blue{
+            background-color: #abe0ff;
+            .icon-name{
+                background-color: #e8f7ff;
+                color: $color-main;
+            }
+        }
+        &.green{
+            background-color: #daf8cc;
+            .icon-name{
+                background-color: #effde8;
+                color: $green;
+            }
+        }
+    }
+    .icon-name{
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: rem(40);
+    }
+    dd{
+        @include flex-1;
+        margin-left: rem(30);
+    }
+}
+
+//下单
+
+//订单查询
+
+
+//延时计费
+.time-btn{
+    @include flex;
+    li{
+        @include flex-1;
+        padding: 0 rem(60);  
+    }
+}
+.time-box{
+    background-color: #f8f8f8;
+    border-radius: rem(12);
+    .cell-name{
+        min-width: rem(188);
+    }
+}
+
+//流程
+.cq-step{
+    dl{
+        position: relative;
+        padding-left: rem(180);
+        &.start{
+            dd{
+                border-left: 0;
+                &::before{
+                    background-color: $green;
+                }
+            }
+        }
+        &.on{
+            dd{
+                &::before{
+                    background-color: $green;
+                }
+            }
+        }
+        &.end{
+            dd{
+                &::before{
+                    background: $green url(../images/cq-step-true.png) center center no-repeat;
+                    @include bg_sz(22, 15);
+                    transform: scale(1.3);
+                }
+            }
+        }
+    }
+    dt{
+        position: absolute;
+        left: 0;
+        top: - rem(3);
+        width: rem(140);
+        text-align: right;
+    }
+    dd{
+        position: relative;
+        padding-left: rem(40);
+        padding-bottom: rem(30);
+        border-left: 1px solid #dedede;
+        h3{
+            transform: translateY(- rem(5));
+        }
+        &::before{
+            position: absolute;
+            top: 0;
+            left: - rem(15);
+            content: '';
+            @include wh_ib(24, 24);
+            border: 2px solid $green;
+            border-radius: 100%;
+            background-color: #fff;
+        }
+    }
+    &.cq-fixed-step{
+        dd{
+            min-height: rem(165);
+        }
+    }
+}
+.cq-step-h{
+    @include flex;
+    dl{
+        @include flex-1;
+        position: relative;
+        height: rem(93);
+        margin-top: rem(54);
+        border-top: 1px solid #dedede;
+        text-align: center;
+        dt{
+            position: absolute;
+            left: 50%;
+            @include wh_ib(48, 48);
+            transform: translate(-50%, -50%);
+            border-radius: 100%;
+            line-height: rem(48);
+            background-color: #ccc;
+            //font-size: rem(22);
+            color: #fff;
+        }
+        dd{
+            margin-top: rem(30);
+            color: $gray;
+        }
+        &.on{
+            dt{
+                background-color: $color-main;
+            }
+            dd{
+                display: block;
+                color: $color-main;
+            }
+        }
+    }
+}
+.cq-tbyc{
+    padding: rem(30) 0;
+    background-color: #faccd0;
+    text-align: center;
+    color: #e60012;
+    line-height: rem(28);
+    .icon{
+        @include wh_ib(38, 38);
+        background: #e60012 url(../images/cq-error.png) center center no-repeat;
+        @include bg_sz(4, 22);
+        border-radius: 100%;
+    }
+}
+.cq-ysjf{
+    padding: rem(30) 0;
+    background-color: #ffe7d2;
+    text-align: center;
+    color: #fe891e;
+    line-height: rem(28);
+    .icon{
+        @include wh_ib(38, 38);
+        background: #fe891e url(../images/cq-warn.png) rem(16) center no-repeat;
+        @include bg_sz(11, 16);
+        border-radius: 100%;
+    }
+}
+.cq-kcz{
+    padding: rem(30) 0;
+    background-color: #daf1ff;
+    text-align: center;
+    color: #44bbfe;
+    line-height: rem(28);
+    .icon{
+        @include wh_ib(38, 38);
+        background: #44bbfe url(../images/cq-warn.png) rem(16) center no-repeat;
+        @include bg_sz(11, 16);
+        border-radius: 100%;
+    }
+}
+.cq-kcbh{
+    padding: rem(30) 0;
+    background-color: #faccd0;
+    text-align: center;
+    color: #e60012;
+    line-height: rem(28);
+    .icon{
+        @include wh_ib(38, 38);
+        background: #e60012 url(../images/cs-kcbh.png) center center no-repeat;
+        @include bg_sz(16, 14);
+        border-radius: 100%;
+    }
+}
+.cq-kcwc{
+    padding: rem(30) 0;
+    background-color: #def5d3;
+    text-align: center;
+    color: #59cd24;
+    line-height: rem(28);
+    .icon{
+        @include wh_ib(38, 38);
+        background: #59cd24 url(../images/cq-step-true.png) center center no-repeat;
+        @include bg_sz(16, 14);
+        border-radius: 100%;
+    }
+}
+
+
+//订单受理-自动化业务
+.order-auto{
+    @include flex;
+    background-color: #fff;
+    li{
+        @include flex-1;
+        a{
+            display: block;
+            height: rem(170);
+            padding-top: rem(110);
+            text-align: center;
+            &.mmb{
+                background: url(../images/od-mmb.png) center rem(36) no-repeat;
+                @include bg_sz(91,62);
+            }
+            &.gp-mmb{
+                background: url(../images/od-gp-mmb.png) center rem(31) no-repeat;
+                @include bg_sz(73,71); 
+            }
+        }
+    }
+}
+
+.od-add-mmb{
+    .cq-cell-row{
+        position: relative;
+        transition: all .2s ease;
+        &.del-state{
+            padding-right: rem(60);
+            .del-icon{
+                display: inline-block;
+            }
+        }
+        .del-icon{
+            position: absolute;
+            right: 0;
+            top: 50%;
+            display: none;
+            @include wh(34, 39);
+            background: url(../images/cq-del.png) center center no-repeat;
+            @include bg_sz(34, 39);
+            transform: translateY(-50%);
+        }
+    }
+}
+
+.cq-ad{
+    .swiper-container{
+        height: rem(460);
+    }
+    .swiper-pagination{
+        bottom: rem(12);
+    }
+    img{
+        width: 100%;
+        height: 100%;
+    }
+    .swiper-pagination-bullet{
+        width: rem(15);
+        height: rem(15);
+        background-color: #f5f5f5;
+        &.swiper-pagination-bullet-active{
+            width: rem(30);
+            border-radius: rem(8);
+            background-color: #fff;
+        }
+    }
+}
+
+.od-in-nav {
+    @include flex;
+    flex-wrap: wrap;
+    li {
+        padding: 0 rem(10);
+        flex: 0 0 33.33%;
+    }
+    a {
+        @include flex;
+        @include flex-align-center;
+        @include flex-vertical-center;
+        text-align: center;
+        &.my-order{
+            height: rem(300);
+            background: #fff url(../images/od-in-nav-01.png) no-repeat;
+            background-size: 100% rem(302);
+        }
+        &.order-sl{
+            height: rem(300);
+            background: #fff url(../images/od-in-nav-02.png) no-repeat;
+            background-size: 100% rem(302);
+        }
+        &.jtzhwh{
+            height: rem(300);
+            background: #fff url(../images/od-in-nav-03.png) no-repeat;
+            background-size: 100% rem(302);
+        }
+    }
+    .name{
+        margin-top: rem(15);
+    }
+    .icon{
+        position: relative;
+        @include wh_ib(104, 104);
+        img{
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .num{
+        position: absolute;
+        right: 0;
+        top: 0;
+        @include wh_ib(30, 30);
+        background-color: #eb2623;
+        border: 2px solid #fff;
+        border-radius: 100%;
+        color: #fff;
+        text-align: center;
+        line-height: rem(26);
+        font-style: normal;
+        font-size: rem(18);
+    }
+}
+
+.od-in-notice{
+    .title{
+        @include wh_ib(185,40);
+        background: url(../images/od-in-notice-tt.png) no-repeat;
+        background-size: 100%;
+    }
+    .noti-icon{
+        @include wh(105,105);
+        background: #f4f4f4 url(../images/od-in-notice-icon.png) center center no-repeat;
+        @include bg_sz(59, 58);
+        border-radius: 100%;
+    }
+}
+.od-in-notice-list{
+    li{
+        position: relative;
+        padding-left: rem(15);
+        line-height: rem(42);
+        &::before{
+            position: absolute;
+            left: 0;
+            top: 48%;
+            content: ' ';
+            @include wh_ib(4, 4);
+            background-color: #333;
+            border-radius: 100%;
+        }
+        a{
+            color: #444;
+        }
+    }
+}
+.od-in-phone{
+    @include flex;
+    @include flex-space-between;
+    @include flex-align-center;
+    padding-left: rem(200);
+    background: #fff url(../images/od-in-phone.png) rem(50) center no-repeat;
+    @include bg_sz(97, 113);
+    .phone-btn{
+        @include wh_ib(175,45);
+        border-radius: rem(23);
+        border: 0;
+        color: #fff;
+        @include flex-align-center;
+        background: -webkit-linear-gradient(#ffd637, #fda213);
+        background: -o-linear-gradient(#ffd637, #fda213);
+        background: -moz-linear-gradient(#ffd637, #fda213);
+        background: linear-gradient(#ffd637, #fda213);
+    }
+}
+
+.noti-swiper{
+    width: rem(600);
+    height: rem(105);
+    overflow: hidden;
+}
+
+/*产品推荐会*/
+.pcmd-ad{
+    .swiper-container{
+        height: rem(339);
+    }
+    .swiper-pagination{
+        bottom: rem(12);
+    }
+    img{
+        width: 100%;
+        height: 100%;
+    }
+    .swiper-pagination-bullet{
+        width: rem(15);
+        height: rem(15);
+        background-color: #f5f5f5;
+        &.swiper-pagination-bullet-active{
+            width: rem(30);
+            border-radius: rem(8);
+            background-color: #fff;
+        }
+    }
+}
+.pcmd-nav{
+    @include flex;
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    background-color: #000033;
+    li{
+        flex: 1;
+        a{
+            display: block;
+            height: rem(93);
+            line-height: rem(93);
+            text-align: center;
+            color: #fff;
+            font-size: rem(28);
+        }
+        &.on{
+            a{
+                color: #99ff33;
+            }
+        }
+    }
+}
+
+.cq-oth-label-zdh{
+    @include wh_ib(40,38);
+    background: url(../images/cq-zdh.png) center center no-repeat;
+    background-size: 100%;
+}
+.cq-oth-label-td{
+    @include wh_ib(40,38);
+    background: url(../images/cq-td.png) center center no-repeat;
+    background-size: 100%;
+}
+
+.cq-cell-list{
+    .cq-succ-icon{
+        display: none;
+    }
+    .cell-on{
+        .cq-succ-icon{
+            display: inline-block;
+        }
+        .name{
+            color: $color-main !important;
+        }
+    }
+}

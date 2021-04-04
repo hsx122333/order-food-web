@@ -1,0 +1,124 @@
+// 配置类
+@function px2rem($px) {
+    @return $px/75 + rem;
+}
+@function rem($px) {
+  @return $px/75 + rem;
+}
+@mixin icon($w, $h) {
+  display: inline-block;
+  vertical-align: top;
+  width: px2rem($w);
+  height: px2rem($h);
+}
+@mixin wh($w, $h) {
+    width: px2rem($w);
+    height: px2rem($h);
+}
+@mixin wh_ib($w, $h) {
+    display: inline-block;
+    width: px2rem($w);
+    height: px2rem($h);
+    vertical-align: middle;
+}
+@mixin bg_sz($w:auto, $h:auto) {
+  -webkit-background-size: rem($w) rem($h);
+  background-size: rem($w) rem($h);
+}
+
+@mixin flex {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;  
+}
+@mixin flex-3 {
+    -webkit-box-flex: 3;
+    -webkit-flex: 3; 
+    flex: 3; 
+}
+@mixin flex-2 {
+    -webkit-box-flex: 2;
+    -webkit-flex: 2; 
+    flex: 2; 
+}
+@mixin flex-1 {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1; 
+    flex: 1; 
+}
+
+@mixin flex-vertical-center {
+    -webkit-box-pack:center;
+    -webkit-justify-content: center;
+    justify-content: center;
+}
+@mixin flex-align-center {
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+@mixin flex-space-between {
+    -webkit-box-pack:justify;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+}
+@mixin flex-space-around {
+    -webkit-box-pack:justify;
+    -webkit-justify-content: space-around;
+    justify-content: space-around;
+}
+
+@mixin text-overflow {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+@mixin text-overflow-two {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+//页面配色
+$body-color: #333;
+$body-bg: #f6f6f6;
+
+//主色
+$color-main: #44bbfe;
+
+//黑色
+$black: #000;
+
+//白色
+$white: #fff;
+$lightwhite: #fafafa;
+
+//灰色
+$gray: #9b9b9b;
+$lightgray: #909090;
+
+//红色
+$red :#a63533;
+$lightred :#fc5d53;
+//橙色
+$orange: #ff352f;
+$lightorange: #fd9e40;
+//黄色
+$yellow: #ffb03f;
+$lightyellow: #ffdaa4;
+//绿色
+$green: #5dce29;
+//青色
+$cyan: #47b747;
+//蓝色
+$blue: #409eff;
+$lightblue: #daf1ff;
+//紫色
+$purple: #e322cb;
+
+// 边框颜色
+$border-color: #e7e7e7;

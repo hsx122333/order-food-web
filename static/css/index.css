@@ -1,0 +1,20 @@
+@import './app.css';
+@import './base.css';
+@import './chanpintuijie.css';
+@import './common.css';
+@import './imagesPage.css';
+@import './diy.css';
+
+
+.el-message-box {
+    width: 90%;
+}
+.el-message {
+    top: 1.2rem !important;
+    z-index: 3001 !important;
+    width: 100% !important;
+}
+
+.el-loading-mask {
+    z-index: 100 !important;
+}

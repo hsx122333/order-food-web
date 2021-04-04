@@ -1,0 +1,7 @@
+@charset "UTF-8";
+/* 自写专用样式 */
+
+/* 图片预览修改 el-dialog 窗口边距  */
+.uploadImg .el-dialog__body {
+    padding: 0.1rem;
+}

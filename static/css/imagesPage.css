@@ -1,0 +1,92 @@
+body > img {
+  width: 100%;
+  height: auto;
+  display: block; }
+
+.yuyue {
+  display: flex;
+  justify-content: center;
+  background: #e5e5e5; }
+  .yuyue img {
+    width: 40%;
+    height: auto; }
+
+.dialog-box {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.35);
+  display: none; }
+
+.dialog {
+  width: 90%;
+  left: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+  position: absolute;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  padding: 0.4rem; }
+  .dialog .label {
+    font-size: 0.32rem;
+    padding-left: 0.2666666667rem; }
+
+.dialog .close {
+  position: absolute;
+  right: 0.2666666667rem;
+  top: 0.2666666667rem;
+  width: 0.4rem;
+  height: 0.4rem;
+  background: url("../images/chanpintuijie/close-icon.png") no-repeat center;
+  background-size: 0.2666666667rem auto; }
+
+.dialog .title {
+  text-align: center;
+  line-height: 0.5333333333rem;
+  font-size: 0.3733333333rem;
+  font-weight: 600; }
+
+.dialog .content {
+  padding-top: 0.4rem; }
+
+.dialog .content input {
+  height: 0.8rem;
+  line-height: 0.8rem;
+  font-size: 0.3466666667rem;
+  border: 1px solid #d2d2d2;
+  border-radius: 0.1333333333rem;
+  padding-left: 0.8rem;
+  width: 100%;
+  margin-top: 0.2666666667rem;
+  background: url("../images/phone.jpg") no-repeat 0.2666666667rem center;
+  background-size: auto 0.4rem; }
+
+.dialog .content .btn {
+  line-height: 0.8rem;
+  border-radius: 0.4rem;
+  text-align: center;
+  color: #ffffff;
+  font-size: 0.32rem;
+  background-color: #1b7af8;
+  margin-top: 0.4rem; }
+
+.btn-box {
+  background-color: #01050e;
+  display: flex;
+  justify-content: center;
+  padding: 0.4rem 0; }
+
+.show-dialog-btn {
+  background-color: #729bf8;
+  color: #ffffff;
+  line-height: 0.8rem;
+  text-align: center;
+  border-radius: 0.1333333333rem;
+  padding: 0 0.4rem;
+  font-size: 0.4rem; }
+
+/*# sourceMappingURL=imagesPage.css.map */

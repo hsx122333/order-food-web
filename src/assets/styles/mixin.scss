@@ -1,0 +1,58 @@
+@import "./var";
+// flexiable 字体大小
+@mixin font-dpr($font-size) {
+    font-size: $font-size;
+    [data-dpr="2"] & {
+        font-size: $font-size * 2;
+    }
+    [data-dpr="3"] & {
+        font-size: $font-size * 3;
+    }
+}
+//px 转rem
+@function px2rem($px, $base-font-size: 108px) {
+  @return ($px / $base-font-size) * 1rem;
+}
+//placeholder
+@mixin placeholder {
+  &::-webkit-input-placeholder {
+    @content
+  }
+
+  &::-moz-placeholder {
+    @content
+  }
+
+  &:-ms-input-placeholder {
+    @content
+  }
+}
+// simple BEM
+@mixin b ($block) {
+  $B: $block!global;
+  .#{$B}{
+    @content
+  }
+}
+@mixin e ($element) {
+  $E: $B + $elementSeparator + $element!global;
+  @at-root {
+    .#{$E}{
+      @content
+    }
+  }
+}
+@mixin m($modifier) {
+  @at-root {
+    .#{$E+$modifierSeparator+$modifier}{
+      @content
+    }
+  }
+}
+@mixin when($state) {
+  @at-root {
+    &.#{$state-prefix + $state} {
+      @content;
+    }
+  }
+}

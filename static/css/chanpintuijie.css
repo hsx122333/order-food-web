@@ -1,0 +1,79 @@
+html, body {
+  height: 100%; }
+
+.page {
+  min-height: 100%;
+  background-color: #000033; }
+  .page .banner {
+    padding: 0.3733333333rem 0.5333333333rem;
+    height: 4.5333333333rem;
+    background: url("../images/chanpintuijie/b.jpg") no-repeat;
+    background-size: cover;
+    color: #ffffff;
+    font-size: 0.4rem; }
+  .page .nav {
+    border-bottom: 1px solid #ffffff;
+    border-top: 1px solid #ffffff;
+    overflow-x: auto; }
+    .page .nav li {
+      padding: 0.4rem 0.3333333333rem;
+      flex-shrink: 0;
+      text-align: center;
+      color: #ffffff;
+      font-size: 0.3733333333rem;
+      border-bottom: 0.0533333333rem solid transparent; }
+    .page .nav .is-active {
+      border-color: #99ff33; }
+  .page .content ul {
+    display: none; }
+  .page .content ul:first-child {
+    display: block; }
+  .page .block {
+    margin-top: 0.1333333333rem;
+    height: 3.0666666667rem;
+    position: relative;
+    background: url("../images/chanpintuijie/bj.jpg") no-repeat;
+    background-size: cover; }
+    .page .block .bg {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 3.0666666667rem;
+      background: no-repeat;
+      background-size: 100% 100%; }
+      .page .block .bg img {
+        width: 100%;
+        height: 100%; }
+    .page .block .text {
+      display: flex;
+      flex-direction: column; }
+    .page .block .title {
+      color: #99ff33;
+      font-size: 0.4266666667rem; }
+    .page .block .sub-title {
+      color: #ffffff;
+      font-size: 0.2933333333rem;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      flex: 1; }
+    .page .block .more {
+      color: #99ff33;
+      font-size: 0.24rem;
+      line-height: 0.4rem;
+      padding-left: 0.5333333333rem;
+      background: url("../images/chanpintuijie/arrow-right.png") no-repeat;
+      background-size: auto 100%;
+      margin-top: 0.2666666667rem; }
+  .page .content-left {
+    padding: 0.2666666667rem 3.7333333333rem 0.2666666667rem 0.6666666667rem; }
+    .page .content-left .bg {
+      right: 0; }
+  .page .content-right {
+    padding: 0.2666666667rem 0.6666666667rem 0.2666666667rem 3.7333333333rem; }
+    .page .content-right .bg {
+      left: 0; }
+
+/*# sourceMappingURL=chanpintuijie.css.map */

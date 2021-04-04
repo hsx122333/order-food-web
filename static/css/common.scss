@@ -1,0 +1,743 @@
+@charset "utf-8";
+@import './config.scss';
+/* 公共样式 */
+// flexbox 
+.flex{
+    @include flex();
+}
+.flex-1 {
+    @include flex-1();
+}
+.flex-align-center{
+    @include flex-align-center();
+}
+//省略号
+.text-overflow{
+    @include text-overflow();
+}
+.text-overflow-two{
+    @include text-overflow-two();
+}
+
+.body-pdt{
+    padding-top: rem(90);
+}
+
+.header-sub{
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    z-index: 888;
+    height: rem(90);
+    background-color: #44bbfe;
+    h2{
+        line-height: rem(90);
+    }
+    .back{
+        position: absolute;
+        top: 0;
+        left: 0;
+        @include wh_ib(90, 90);
+        background: url(../images/back.png) center center no-repeat;
+        @include bg_sz(17, 32);
+    }
+}
+
+.cq-panel{
+    .panel-head{
+        @include flex;
+        @include flex-align-center;
+        @include flex-space-between;
+        height: rem(93);
+        padding-left: rem(30);
+        padding-right: rem(30);
+        border-bottom: 1px solid $border-color;
+        background-color: #fff;
+        h3{
+            position: relative;
+            padding-left: rem(20);
+            line-height: rem(93);
+            font-weight: normal;
+            font-size: rem(28);
+            &::before{
+                position: absolute;
+                left: 0;
+                top: 50%;
+                content: ' ';
+                display: inline-block;
+                width: rem(8);
+                height: rem(30);
+                margin-top: - rem(15);
+                background-color: $color-main;
+            }
+        }
+    }
+    .panel-body{
+        background-color: #fff; 
+        table{
+            width: 100%;
+            text-align: center;
+            vertical-align: middle;
+            border-collapse: collapse;  
+            tr{
+                height: rem(90);
+                td{
+                    width: 33.3333%;
+                    border: 1px solid $border-color;
+                }
+            }
+        }
+    }
+    &.cq-panel-nobg .panel-body{
+        background-color: transparent;
+    }
+}
+
+.cq-go{
+    @include wh_ib(12, 20);
+    background: url(../images/cq-go.png) center center no-repeat;
+    @include bg_sz(12, 20);
+}
+.cq-go-big{
+    @include wh_ib(16, 28);
+    background: url(../images/cq-go-big.png) center center no-repeat;
+    @include bg_sz(16, 28);  
+}
+.cq-go-yell{
+    @include wh_ib(12, 20);
+    background: url(../images/cq-go-yell.png) center center no-repeat;
+    @include bg_sz(12, 20);
+}
+.cq-go-blue{
+    @include wh_ib(12, 20);
+    background: url(../images/cq-go-blue.png) center center no-repeat;
+    @include bg_sz(12, 20);
+}
+.cq-sch-icon{
+    @include wh_ib(26, 28);
+    background: url(../images/cq-sch-blue.png) center center no-repeat;
+    background-size: 100%;
+}
+.cq-edit-icon{
+    @include wh_ib(26, 28);
+    background: url(../images/cq-edit.png) center center no-repeat;
+    background-size: 100%;
+}
+.cq-succ-icon{
+    @include wh_ib(48, 34);
+    background: url(../images/tx-succ.png) center center no-repeat;
+    background-size: 80%;
+}
+
+.cq-link{
+    display: inline-block;
+    height: rem(54);
+    // padding: 0 rem(25);
+    background-color: transparent;
+    border-radius: rem(27);
+    line-height: rem(54);
+    font-size: rem(24);
+    border: none;
+    text-align: center;
+    &.cq-link-blue{
+        color: #44bbfe;
+    }
+    &.cq-link-yell{
+        color: #fd9e40;
+    }
+}
+
+//按钮
+// .cq-btn-line{
+//     min-width: rem(132);
+//     height: rem(54);
+//     padding: 0 rem(25);
+//     border: 1px solid $color-main;
+//     border-radius: rem(27);
+//     background-color: #fff;
+//     color: $color-main;
+//     line-height: rem(52);
+// }
+.cq-btn{
+    display: inline-block;
+    min-width: rem(132);
+    height: rem(54);
+    padding: 0 rem(25);
+    background-color: $color-main;
+    border-radius: rem(27);
+    color: #fff;
+    line-height: rem(54);
+    font-size: rem(24);
+    border: none;
+    text-align: center;   
+    &.cq-btn-block{
+        width: 100%;
+        display: block;
+    }
+    &.cq-btn-big{
+        height: rem(93);
+        line-height: rem(93);
+        border-radius: rem(45);
+        font-size: rem(28);
+        box-shadow: 0 rem(8) rem(20) rgba(#39c7ff, .34)
+    }
+    &.cq-btn-md{
+        height: rem(70);
+        line-height: rem(70);
+        border-radius: rem(35);
+    }
+    &.cq-btn-blue{
+        background-color: $lightblue;
+        color: $color-main;
+    }
+    &.cq-btn-yell{
+        background-color: #ffecd9;
+        color: #fd9e40;
+    }
+    &.cq-btn-line{
+        border: 1px solid $color-main;
+        background-color: transparent;
+        color: $color-main;
+    }
+    &.cq-btn-sm{
+        min-width: auto;
+        width: rem(100);
+        padding: 0 rem(10);
+    }
+    &.cq-btn-bdrs{
+        border-radius: rem(8);
+    }
+    &.cq-btn-green{
+        background-color: $green;
+    }
+    &.cq-btn-orange{
+        background-color: $lightorange;
+    }
+}
+
+.cq-label{
+    display: inline-block;
+    min-width: rem(132);
+    height: rem(54);
+    border-radius: rem(27);
+    background-color: #daf1ff;
+    color: #44bbfe;
+    line-height: rem(54);
+    text-align: center;
+}
+
+.cq-cell{
+    @include flex;
+    @include flex-align-center; 
+    @include flex-space-between; 
+    border-bottom: 1px solid $border-color;
+    .icon{
+        position: relative;
+        width: rem(42);
+        height: rem(42);
+        @include flex;
+        @include flex-align-center;
+        overflow: hidden;
+        &.team{
+            background: url(../images/team.png) center center no-repeat;
+            background-size: 100%;
+        }
+        &.user{
+            background: url(../images/user.png) center center no-repeat;
+            background-size: 80%;
+        }
+        img{
+            width: 100%;
+            height: 100%;
+        }
+        &.icon-md{
+            width: rem(75);
+            height: rem(75); 
+        }  
+    }
+    .num{
+        position: absolute;
+        right: 0;
+        top: 0;
+        @include wh_ib(38, 38);
+        background-color: #eb2623;
+        border: 2px solid #fff;
+        border-radius: 100%;
+        color: #fff;
+        text-align: center;
+        line-height: rem(34);
+        font-style: normal;
+        font-size: rem(18);
+        overflow: hidden;
+    }
+    .name{
+        // line-height: rem(95);
+        min-height: rem(95);
+        @include flex;
+        @include flex-align-center; 
+        color: #333 !important;
+    }
+    .cell-main{
+        text-align: right;
+        @include flex-1;
+    }
+    .cell-ipt{
+        width: 60%;
+        text-align: right;
+        border: none;
+    }
+    .cell-text{
+        width: 80%;
+        padding-top: rem(12);
+        text-align: right;
+        border: none;
+    }
+    .bd-ipt{
+        width: 100%;
+        height: rem(75);
+        padding-left: rem(18);
+        border: 1px solid #d8d8d8;
+        color: #333;
+        border-radius: rem(12);
+        background-color: transparent;
+    }
+    &:last-child{
+        border-bottom: none;
+    }
+    &.cq-cell-nobd{
+        border-bottom: 0;
+    }
+    &.cq-cell-fixed{
+        .name{
+            min-width: rem(130);
+            margin-right: rem(20);
+        }
+        .cell-main{
+            text-align: left;
+        }
+    }
+    &.cq-cell-fixed-big{
+        .name{
+            min-width: rem(180);
+            margin-right: rem(20);
+        }
+        .cell-main{
+            text-align: left;
+        }
+    }
+}
+.cq-cell-row{
+    display: block;
+    padding: rem(15) 0;
+    border-bottom: 1px solid $border-color; 
+    .cell-row{
+        @include flex;
+        @include flex-align-center; 
+        @include flex-space-between;
+        .row-name{
+            min-height: rem(48);
+            @include flex;
+            @include flex-align-center; 
+            color: #333 !important;
+        }
+        .row-main{
+            text-align: right;
+            @include flex-1;
+        }
+    }
+    // &:last-child{
+    //     border-bottom: none;
+    // }
+    .cell-title{
+        @include flex;
+        @include flex-align-center; 
+        @include flex-space-between;
+        padding-bottom: rem(5);
+        margin-bottom: rem(8);
+        border-bottom: 1px solid $border-color;
+        .title-name{
+            min-height: rem(48);
+            @include flex;
+            @include flex-align-center;
+        }
+        .title-main{
+            text-align: right;
+            @include flex-1;
+        }
+    }
+    &.cq-cell-row-rds{
+        margin-bottom: rem(20);
+        border: 1px solid $border-color;
+        border-radius: rem(10);
+        .row-name{
+            color: $gray !important;
+        }
+    }
+    &:last-child{
+        border-bottom: none;
+    }
+}
+
+.cq-phone{
+    @include wh_ib(48, 48);
+    background: url(../images/phone.png) center center no-repeat;
+    background-size: cover;
+}
+
+.cq-file{
+    position: relative;
+    @include wh_ib(96, 96);
+    border: 1px dashed $color-main;
+    border-radius: rem(6);
+    text-align: center;
+    .file-icon{
+        // position: absolute;
+        // top: 50%;
+        // left: 50%;
+        margin-top: rem(10);
+        @include wh_ib(42, 42);
+        background: $color-main url(../images/cq-file-add.png) center center no-repeat;
+        @include bg_sz(22, 22);
+        border-radius: 100%;
+        // transform: translate(-50%, -50%);
+    }
+    &.cq-file-id{
+        @include wh(140, 96);
+        border-color: #dedede;
+        background: url(../images/cq-file-id.png) center center no-repeat;
+        @include bg_sz(71, 34);
+
+        &.cq-file-id-two{
+            background: url(../images/cq-file-id-02.png) center center no-repeat;
+            @include bg_sz(70, 35);
+        }
+        .file-icon {
+            margin-top: rem(25);
+        }
+    }
+    .no-name {
+        .file-icon {
+            margin-top: rem(25);
+        }
+    }
+    .up-name{
+        margin-top: rem(5);
+        font-size: rem(20);
+        color: $color-main;
+    }
+}
+
+.cq-file-icon{
+    @include wh_ib(96, 96);
+    border-radius: rem(6);
+    position: relative;
+    border: 1px solid #d8d8d8;
+    background: url(../images/cq-img-01.png) left bottom no-repeat;
+    @include bg_sz(94, 75);
+    .file-del{
+        position: absolute;
+        top: - rem(15);
+        right: - rem(15);
+        @include wh_ib(30, 30);
+        background: #d4ecf9 url(../images/cq-close.png) center center no-repeat;
+        @include bg_sz(12, 12);
+        border-radius: 100%;
+        display: inline-block;
+    }
+    // &:hover{
+    //     .file-del{
+    //         display: inline-block;
+    //     }
+    // }
+}
+
+.cq-ipt{
+    height: rem(84);
+    padding-left: rem(18);
+    border: 1px solid #dcdcdc;
+    border-radius: rem(10);
+    &.cq-ipt-block{
+        width: 100%;
+    }
+}
+.cq-sch{
+    position: relative;
+    .cq-btn-sch{
+        right: rem(25);
+        margin-top: - rem(17);
+    }
+}
+.cq-ipt-sch{
+    width: 100%;
+    height: rem(70);
+    padding: 0 rem(40);
+    background-color: #eee;
+    border: none;
+    border-radius: rem(37);
+}
+.cq-btn-sch{
+    position: absolute;
+    top: 50%;
+    right: rem(25);
+    @include wh_ib(32, 34);
+    margin-top: - rem(17);
+    background: url(../images/cq-search.png) center center no-repeat;
+    @include bg_sz(32, 34);
+    border: none;
+}
+
+//单选
+.cq-radio{
+    input{
+        width: rem(28);
+        height: rem(28);
+        vertical-align: middle;
+    }
+}
+//多选
+.cq-checkbox{
+    input{
+        width: rem(28);
+        height: rem(28);
+        vertical-align: middle;
+    }
+}
+//下拉
+.cq-select{
+    &.cq-select-block{
+        width: 100%;
+        direction: rtl;
+
+        option{
+            direction: ltr;
+        }
+    }
+    padding-right: rem(24);
+    border: 0;
+    appearance:none;   
+    -moz-appearance:none;   
+    -webkit-appearance:none;
+    background: url(../images/cq-go-big.png) center right no-repeat;
+    @include bg_sz(16, 28);
+    color: #333 !important;
+    option{
+        color: #333 !important; 
+    }
+}
+//加减
+.cq-as{
+    @include flex;
+    border: 1px solid $border-color;
+    .as-s{
+        @include wh(48, 48);
+        border: 0;
+        border-right: 1px solid $border-color;
+        background-color: transparent;
+        font-size: rem(26);
+        line-height: rem(20);
+        vertical-align: middle;
+    }
+    .as-a{
+        @include wh(48, 48);
+        border: 0;
+        border-left: 1px solid $border-color;
+        background-color: transparent;
+        font-size: rem(26);
+        line-height: rem(20);
+        vertical-align: middle;
+    }
+    .as-v{
+        width: rem(120);
+        height: rem(48);
+        border: 0;
+        background-color: transparent;
+        text-align: center;
+    }
+}
+
+//提示
+.cq-fixed{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 999;
+    background-color: rgba(0, 0, 0, .5);
+}
+.cq-msg{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    @include flex;
+    @include flex-align-center;
+    max-width: rem(500);
+    padding: rem(30) rem(50) rem(30) rem(60);
+    background-color: #f6f6f6;
+    border-radius: rem(10);
+    transform: translate(-50%, -50%);
+    .icon{
+        @include wh_ib(40, 40);
+        border-radius: 100%;
+        &.succ{
+            background: #59cd24 url(../images/cq-step-true.png) center center no-repeat;
+            background-size: 60%;
+        }
+        &.error{
+            background: #e60012 url(../images/cq-error.png) center center no-repeat;
+            background-size: 10%;
+        }
+    }
+    .text{
+        @include flex-1;
+        margin-left: rem(20);
+        font-size: rem(28);
+    }
+}
+
+.cq-popup{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    background-color: #fff;
+    transition: transform .2s ease;
+    transform: translateY(100%);
+    &.open{
+        transform: translateY(0);
+    }
+}
+.cq-close{
+    @include wh_ib(30, 30);
+    background: url(../images/cq-close-gray.png) center center no-repeat;
+    @include bg_sz(24, 24);
+}
+
+.cq-nav{
+    @include flex;
+    @include flex-align-center;
+    @include flex-space-between;
+    background-color: #fff;
+    border-bottom: 1px solid $border-color;
+    li{
+        position: relative;
+        @include flex-1;
+        &.on{
+            color: $color-main;
+            &::after{
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                content: ' ';
+                width: 100%;
+                border-top: 2px solid $color-main;
+            }
+        }
+        a{
+            display: block;
+            height: rem(94);
+            text-align: center;
+            line-height: rem(94);
+            font-size: rem(28);
+        }
+    }
+}
+
+//必须
+.cq-req{
+    position: relative;
+    &::after{
+        position: absolute;
+        left: - rem(12);
+        top: 50%;
+        margin-top: - rem(20);
+        content: '*';
+        color: #ff0000;
+        font-size: rem(24);
+    }
+}
+.cq-req-two{
+    position: relative;
+    &::after{
+        position: absolute;
+        left: - rem(12);
+        top: 50%;
+        margin-top: - rem(40);
+        content: '*';
+        color: #ff0000;
+        font-size: rem(24);
+    }
+}
+
+.cq-text{
+    width: 100%;
+    min-height: rem(180);
+    padding: rem(10);
+    border-radius: rem(5);
+}
+
+.cq-text-sm{
+    width: 80%;
+    min-height: rem(120);
+    padding: rem(10);
+    border-radius: rem(5);
+}
+
+//星级评分
+.cq-star{
+    display: inline-block;
+    vertical-align: middle;
+    li{
+        @include wh_ib(66, 66);
+        margin-right: rem(10);
+        background: url(../images/cq-star.png) center center no-repeat;
+        @include bg_sz(66, 66);
+        &.on{
+            background: url(../images/cq-star-on.png.png) center center no-repeat;
+            @include bg_sz(66, 66);
+        }
+    }
+}
+
+// 资费专区分享
+.charges{
+    flex: 0 0 70%;
+}
+.share{
+    transform: translateY(100%);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 99;
+    background-color:rgba(0, 0, 0, 0.22);
+    .share-to{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background: $white;
+        .share-list{
+            @include flex;
+            flex-wrap: wrap;
+            .list-item{
+                flex: 0 0 25%;
+                text-align: center;
+                margin-top: rem(20);
+                &>img{
+                    width: 60%;
+                }
+            }
+        }        
+    } 
+}
+.show{
+    transform: translateY(0) !important;
+}
+
+

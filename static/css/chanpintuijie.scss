@@ -1,0 +1,100 @@
+@function px2rem($px) {
+  @return $px/75 + rem;
+}
+html,body{
+  height: 100%;
+}
+.page{
+  min-height: 100%;
+  background-color: #000033;
+  .banner{
+    padding: px2rem(28) px2rem(40);
+    height: px2rem(340);
+    background: url("../images/chanpintuijie/b.jpg") no-repeat;
+    background-size: cover;
+    color: #ffffff;
+    font-size: px2rem(30);
+  }
+  .nav{
+    border-bottom: 1px solid #ffffff;
+    border-top: 1px solid #ffffff;
+    overflow-x: auto;
+    li{
+      padding: px2rem(30) px2rem(25);
+      flex-shrink: 0;
+      text-align: center;
+      color: #ffffff;
+      font-size: px2rem(28);
+      border-bottom: px2rem(4) solid transparent;
+    }
+    .is-active{
+      border-color:#99ff33;
+    }
+  }
+  .content{
+    ul{
+      display: none;
+    }
+    ul:first-child{
+      display: block;
+    }
+  }
+  .block{
+    margin-top: px2rem(10);
+    height: px2rem(230);
+    position: relative;
+    background: url("../images/chanpintuijie/bj.jpg") no-repeat;
+    background-size: cover;
+    .bg{
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: px2rem(230);
+      background: no-repeat;
+      background-size: 100% 100%;
+      img{
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .text{
+      display: flex;
+      flex-direction: column;
+    }
+    .title{
+      color: #99ff33;
+      font-size: px2rem(32);
+    }
+    .sub-title{
+      color: #ffffff;
+      font-size: px2rem(22);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      flex: 1;
+    }
+    .more{
+      color: #99ff33;
+      font-size: px2rem(18);
+      line-height: px2rem(30);
+      padding-left: px2rem(40);
+      background: url("../images/chanpintuijie/arrow-right.png") no-repeat;
+      background-size: auto 100%;
+      margin-top: px2rem(20);
+    }
+  }
+  .content-left{
+    padding: px2rem(20) px2rem(280) px2rem(20) px2rem(50);
+    .bg{
+      right: 0;
+    }
+  }
+  .content-right{
+    padding: px2rem(20) px2rem(50) px2rem(20) px2rem(280);
+    .bg{
+      left: 0;
+    }
+  }
+}
